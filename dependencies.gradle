@@ -1,5 +1,6 @@
 ext {
     def koin_version = '2.2.0-alpha-1'
+    def hilt_version = '2.33-beta'
 
     minSdkVersion = 21
     targetSdkVersion = 30
@@ -19,4 +20,7 @@ ext {
     koinTest = "org.koin:koin-test:$koin_version"
     koinUnitTest = "org.koin:koin-test-junit4:$koin_version"
     viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0"
+
+    hilt = "com.google.dagger:hilt-android:$hilt_version"
+    hiltCompiler = "com.google.dagger:hilt-compiler:$hilt_version"
 }
