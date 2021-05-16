@@ -22,7 +22,6 @@ class MainViewModel(private val useCase: GetPostsUseCase) : ViewModel() {
     fun loadPosts() {
         viewModelScope.launch {
             useCase().collect {
-                Log.d("Collect", "In functions")
                 _postsLiveData.value = it
             }
         }
