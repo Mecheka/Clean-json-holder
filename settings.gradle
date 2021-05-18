@@ -1,4 +1,3 @@
-include ':datat'
 include ':domain'
 include ':data'
 include ':app'

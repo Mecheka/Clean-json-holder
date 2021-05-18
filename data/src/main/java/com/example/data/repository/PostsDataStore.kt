@@ -1,10 +1,10 @@
 package com.example.data.repository
 
-import com.example.data.entities.DataResponse
-import com.example.data.entities.Posts
+import com.example.domain.entities.DataEntity
+import com.example.domain.entities.PostsEntity
 import kotlinx.coroutines.flow.Flow
 
 interface PostsDataStore {
 
-    suspend fun getPosts(): Flow<DataResponse<List<Posts>>>
+    suspend fun getPosts(): Flow<DataEntity<List<PostsEntity>>>
 }

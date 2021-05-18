@@ -4,22 +4,26 @@ import com.example.data.api.RemotePostsApi
 import com.example.data.entities.DataResponse
 import com.example.data.entities.ErrorResponse
 import com.example.data.entities.Posts
+import com.example.domain.entities.DataEntity
+import com.example.domain.entities.ErrorEntity
+import com.example.domain.entities.PostsEntity
+import com.example.domain.repository.PostsRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
-class PostsRemoteImpl (private val api: RemotePostsApi): PostsDataStore {
-    override suspend fun getPosts(): Flow<DataResponse<List<Posts>>> {
+class PostsRemoteImpl (private val api: RemotePostsApi): PostsRepository {
+    override suspend fun getPosts(): Flow<DataEntity<List<PostsEntity>>> {
         return flow {
-            emit(DataResponse.LOADING())
+            emit(DataEntity.LOADING)
             try {
                 val data = api.getPosts()
                 if (data.isSuccessful) {
-                    emit(DataResponse.SUCCESS(data.body()))
+                    emit(DataEntity.SUCCESS(data.body()?.map { PostsEntity(it.body, it.id, it.title, it.userId) }?: listOf()))
                 } else {
-                    emit(DataResponse.ERROR<List<Posts>>(ErrorResponse(data.message())))
+                    emit(DataEntity.ERROR(ErrorEntity(data.message())))
                 }
             } catch (e: Exception) {
-                emit(DataResponse.ERROR<List<Posts>>(ErrorResponse(e.message)))
+                emit(DataEntity.ERROR(ErrorEntity(e.message)))
             }
 
         }

@@ -1,5 +1,5 @@
 ext {
-    def koin_version = '2.2.0-alpha-1'
+    def koin_version = '2.2.2'
     def hilt_version = '2.33-beta'
 
     minSdkVersion = 21
@@ -15,11 +15,10 @@ ext {
     gsonConverter = "com.squareup.retrofit2:converter-gson:2.8.0"
     gson = "com.google.code.gson:gson:2.8.6"
     coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9"
-    koin = "org.koin:koin-android:$koin_version"
-    koinViewModel = "org.koin:koin-androidx-viewmodel:$koin_version"
-    koinTest = "org.koin:koin-test:$koin_version"
-    koinUnitTest = "org.koin:koin-test-junit4:$koin_version"
-    viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0"
+    koin = "io.insert-koin:koin-android:$koin_version"
+    koinViewModel = "io.insert-koin:koin-androidx-viewmodel:$koin_version"
+    koinTest = "io.insert-koin:koin-test:$koin_version"
+    koinUnitTest = "io.insert-koin:koin-test-junit4:$koin_version"
 
     hilt = "com.google.dagger:hilt-android:$hilt_version"
     hiltCompiler = "com.google.dagger:hilt-compiler:$hilt_version"
