@@ -1,9 +1,6 @@
 package com.example.data.repository
 
 import com.example.data.api.RemotePostsApi
-import com.example.data.entities.DataResponse
-import com.example.data.entities.ErrorResponse
-import com.example.data.entities.Posts
 import com.example.domain.entities.DataEntity
 import com.example.domain.entities.ErrorEntity
 import com.example.domain.entities.PostsEntity
