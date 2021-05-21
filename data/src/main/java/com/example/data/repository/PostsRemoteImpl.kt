@@ -10,8 +10,9 @@ import com.example.domain.entities.PostsEntity
 import com.example.domain.repository.PostsRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import javax.inject.Inject
 
-class PostsRemoteImpl (private val api: RemotePostsApi): PostsRepository {
+class PostsRemoteImpl @Inject constructor(private val api: RemotePostsApi): PostsRepository {
     override suspend fun getPosts(): Flow<DataEntity<List<PostsEntity>>> {
         return flow {
             emit(DataEntity.LOADING)

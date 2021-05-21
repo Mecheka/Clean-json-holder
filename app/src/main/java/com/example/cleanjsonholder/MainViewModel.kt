@@ -8,12 +8,13 @@ import androidx.lifecycle.viewModelScope
 import com.example.domain.entities.DataEntity
 import com.example.domain.entities.PostsEntity
 import com.example.domain.usecase.GetPostsUseCase
-import kotlinx.coroutines.Dispatchers
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
-class MainViewModel(private val useCase: GetPostsUseCase) : ViewModel() {
+@HiltViewModel
+class MainViewModel @Inject constructor(private val useCase: GetPostsUseCase) : ViewModel() {
 
     private val _postsLiveData = MutableLiveData<DataEntity<List<PostsEntity>>>()
     val postsLiveData: LiveData<DataEntity<List<PostsEntity>>>
