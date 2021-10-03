@@ -11,11 +11,10 @@ import kotlinx.coroutines.test.setMain
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule
-import org.mockito.kotlin.reset
 
 @ExperimentalCoroutinesApi
 @ObsoleteCoroutinesApi
-abstract class ViewModelTest<VM: ViewModel> {
+abstract class ViewModelTest<VM : ViewModel> {
 
     @get:Rule
     var instantTaskExecutorRule = InstantTaskExecutorRule()

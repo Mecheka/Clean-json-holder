@@ -7,7 +7,7 @@ import com.example.data.entities.Posts
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
-class PostsRemoteImpl (private val api: RemotePostsApi): PostsDataStore {
+class PostsRemoteImpl(private val api: RemotePostsApi) : PostsDataStore {
     override suspend fun getPosts(): Flow<DataResponse<List<Posts>>> {
         return flow {
             emit(DataResponse.LOADING())

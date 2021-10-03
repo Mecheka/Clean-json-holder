@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.cleanjsonholder.databinding.PostsItemBinding
 import com.example.domain.entities.PostsEntity
 
-class MainAdapter(private val posts: List<PostsEntity>):
+class MainAdapter(private val posts: List<PostsEntity>) :
     RecyclerView.Adapter<MainAdapter.PostsViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostsViewHolder {
